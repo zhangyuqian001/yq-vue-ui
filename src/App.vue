@@ -14,12 +14,13 @@
     <yq-button type="info" icon="edit" icon-position="right">搜索右</yq-button>
 
     <yq-button type="danger" icon="edit"></yq-button>
-    <br><br><br>
+    <br />
+    <br />
+    <br />
     <!-- loading 按钮 -->
     <yq-button type="success" loading>加载</yq-button>
     <!-- 触发事件 -->
     <yq-button type="success" @click="loading">提交</yq-button>
-
 
     <yq-button-group>
       <yq-button icon="left" icon-position="left">上一页</yq-button>
@@ -27,14 +28,14 @@
     </yq-button-group>
     <yq-icon icon="sousuo"></yq-icon>
     <yq-icon icon="edit"></yq-icon>
-    
+
     <yq-row>
       <yq-col :span="12">111</yq-col>
       <yq-col :span="12">
         <div class="green">dd</div>
       </yq-col>
     </yq-row>
-     <yq-row>
+    <yq-row>
       <yq-col :span="24">
         <div class="red">33w2w2</div>
       </yq-col>
@@ -61,28 +62,54 @@
         <div class="green">fdfd</div>
       </yq-col>
     </yq-row>
+    <br />
+    <yq-input v-model="value" type="text" placeholder="请输入内容" name="username"></yq-input>
+    <yq-input v-model="value" type="password" placeholder="请输入内容" name="username"></yq-input>
+    <yq-input v-model="value" type="password" :disabled="true" placeholder="请输入内容" name="username"></yq-input>
+    <yq-input v-model="value" type="password" placeholder="请输入内容" name="username" clearable></yq-input>
+    <yq-input v-model="value" type="password" placeholder="请输入内容" name="username" show-password></yq-input>
+    <yq-input
+      v-model="value"
+      type="password"
+      placeholder="请输入内容"
+      name="username"
+      prefix-icon="edit"
+    ></yq-input>
+    <yq-input
+      v-model="value"
+      type="password"
+      placeholder="请输入内容"
+      name="username"
+      suffix-icon="edit"
+    ></yq-input>
+
+    {{value}}
+    <br />
+
+    <br />
   </div>
 </template>
 
 <script>
-
 export default {
-  name: 'app',
-  components: {
+  name: "app",
+  components: {},
+  data(){
+    return {value:''}
   },
   methods: {
-    loading(e){
-      alert(e.toString())
+    loading(e) {
+      alert(e.toString());
     }
-  },
-}
+  }
+};
 </script>
 
 <style lang="scss">
-.red{
+.red {
   background-color: red;
 }
-.green{
+.green {
   background-color: green;
 }
 </style>
