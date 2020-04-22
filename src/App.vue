@@ -67,12 +67,12 @@
 <script>
 
 export default {
-  name: 'App',
+  name: 'app',
   components: {
   },
   methods: {
     loading(e){
-      alert(e)
+      alert(e.toString())
     }
   },
 }
