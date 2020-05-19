@@ -18,6 +18,10 @@ import Carousel from './carousel/carousel.vue'
 import CarouselItem from './carousel/carousel-item'
 import Table from './table/table'
 import Pagination from './pagination/pagination'
+import Popover from './popover.vue'
+import Progress from './progress.vue'
+import DataPicker from './date-picker/date-picker.vue'
+import DataRangePicker from './date-picker/date-range-picker.vue'
 
 const install = (Vue) =>{
     Vue.component(Button.name, Button);
@@ -34,7 +38,11 @@ const install = (Vue) =>{
     Vue.component(Table.name,Table);
     Vue.component(Carousel.name,Carousel);
     Vue.component(CarouselItem.name,CarouselItem);
-    Vue.component(Pagination.name,Pagination)
+    Vue.component(Pagination.name,Pagination);
+    Vue.component(Popover.name,Popover);
+    Vue.component(Progress.name,Progress);
+    Vue.component(DataPicker.name,DataPicker)
+    Vue.component(DataRangePicker.name,DataRangePicker)
 
     
 }

@@ -12,6 +12,7 @@
   "main": "./dist/yq-vue-ui.umd.min.js",
   "dependencies": {
     "core-js": "^3.6.4",
+    "v-click-outside": "^3.0.1",
     "vue": "^2.6.11"
   },
   "devDependencies": {

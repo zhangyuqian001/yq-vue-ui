@@ -101,8 +101,26 @@
       </template>
     </yq-table>
     <br />
+
     <yq-pagination :total="10" :pager-count="5" :current-page.sync="currentPage"></yq-pagination>
     <br />
+    <yq-popover
+      v-model="popoverValue"
+      width="200px"
+      title="标题"
+      content="内容内容，这是一个popover"
+      trigger="click"
+      placement="right"
+    >
+      <yq-button type="primary" slot="reference">点我弹框</yq-button>
+    </yq-popover>
+    <br />
+    <yq-progress style="margin-top:30px" :percentage="60"></yq-progress>
+    <br />
+    {{value1}}
+    <br />
+    日期选择器
+    <yq-date-picker v-model="value1"></yq-date-picker>
   </div>
 </template>
 
@@ -112,6 +130,7 @@ export default {
   components: {},
   data() {
     return {
+      value1: "",
       value: "",
       currentPage: 6,
       columns1: [
@@ -165,7 +184,8 @@ export default {
           address: "Ottawa No. 2 Lake Park",
           date: "2016-10-04"
         }
-      ]
+      ],
+      popoverValue: ""
     };
   },
   methods: {
