@@ -118,9 +118,37 @@
     <yq-progress style="margin-top:30px" :percentage="60"></yq-progress>
     <br />
     {{value1}}
-    <br />
-    日期选择器
+    <br />日期选择器
     <yq-date-picker v-model="value1"></yq-date-picker>
+
+    <div style="margin:20px 0">
+      <yq-button type="primary" @click="displayLoad1">全屏loading</yq-button>
+      <yq-loading :visible="showLoading1"></yq-loading>
+    </div>
+    <div>
+      <yq-button type="primary" @click="displayLoad2">局部loading</yq-button>
+      <div style="position:relative;width:500px;height:200px;border:1px solid #333;margin-top:10px">
+        <yq-loading :visible="showLoading2" :position="'absolute'"></yq-loading>
+      </div>
+    </div>
+    <div style="margin-bottom:20px">
+      <yq-button @click="firstDialog = true">点击打开Dialog</yq-button>
+      <yq-dialog :visible.sync="firstDialog" :header="'标题'">
+        <div>dialog内容</div>
+        <div slot="footer">
+          <yq-button @click="firstDialog = false">取消</yq-button>
+          <yq-button @click="firstDialog = false" type="info">确定</yq-button>
+        </div>
+      </yq-dialog>
+    </div>
+    <div>
+      <yq-button @click="secondDialog = true">点击打开自定义Dialog</yq-button>
+      <yq-dialog :visible.sync="secondDialog">
+        <div>
+          <yq-progress :percentage='55' :color="'#d4333c'"></yq-progress>
+        </div>
+      </yq-dialog>
+    </div>
   </div>
 </template>
 
@@ -185,7 +213,11 @@ export default {
           date: "2016-10-04"
         }
       ],
-      popoverValue: ""
+      popoverValue: "",
+      showLoading1: false,
+      showLoading2: false,
+      firstDialog: false,
+      secondDialog: false
     };
   },
   methods: {
@@ -200,6 +232,18 @@ export default {
     },
     selectAll(selection) {
       console.log(selection);
+    },
+    displayLoad1() {
+      this.showLoading1 = true;
+      setTimeout(() => {
+        this.showLoading1 = false;
+      }, 2000);
+    },
+    displayLoad2() {
+      this.showLoading2 = true;
+      setTimeout(() => {
+        this.showLoading2 = false;
+      }, 2000);
     }
   }
 };

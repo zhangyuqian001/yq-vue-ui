@@ -22,6 +22,8 @@ import Popover from './popover.vue'
 import Progress from './progress.vue'
 import DataPicker from './date-picker/date-picker.vue'
 import DataRangePicker from './date-picker/date-range-picker.vue'
+import Loading from './loading/loading.vue'
+import Dialog from './dialog/dialog.vue'
 
 const install = (Vue) =>{
     Vue.component(Button.name, Button);
@@ -42,7 +44,9 @@ const install = (Vue) =>{
     Vue.component(Popover.name,Popover);
     Vue.component(Progress.name,Progress);
     Vue.component(DataPicker.name,DataPicker)
-    Vue.component(DataRangePicker.name,DataRangePicker)
+    Vue.component(DataRangePicker.name,DataRangePicker);
+    Vue.component(Loading.name,Loading);
+    Vue.component(Dialog.name,Dialog);
 
     
 }
